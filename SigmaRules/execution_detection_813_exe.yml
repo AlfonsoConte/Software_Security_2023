@@ -1,0 +1,21 @@
+title: Execution of 813.exe
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: Detects 813.exe with arguments being executed.
+tags:
+    - attack.execution
+    - attack.defense_evasion
+logsource:
+    service: sysmon
+    product: windows
+detection:
+  selection:
+    EventID: 1
+    Image:
+    - '*\813.exe'
+    CommandLine:
+    - '--de68d0ac'
+  condition: selection
+falsepositives:
+    - They should be rare.
+level: critical

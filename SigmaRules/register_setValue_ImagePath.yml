@@ -1,0 +1,18 @@
+title: Register set value commentsorting ImagePath
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: Sets value of ImagePath in service register commentsorting
+tags:
+    - attack.t1112 
+logsource:
+    service: sysmon
+    product: windows
+detection:
+    selection:
+        EventID: 13
+        TargetObject:
+            - 'HKLM\System\CurrentControlSet\Services\commentsorting\ImagePath'
+        Details:
+            - 'C:\Windows\SysWOW64\commentsorting.exe'
+    condition: selection
+level: critical

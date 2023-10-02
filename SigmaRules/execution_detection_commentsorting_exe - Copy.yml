@@ -1,0 +1,21 @@
+title: Execution of commentsorting.exe
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: Detects commentsorting.exe with arguments being executed.
+tags:
+    - attack.execution
+    - attack.defense_evasion
+logsource:
+    service: sysmon
+    product: windows
+detection:
+  selection:
+    EventID: 1
+    Image:
+    - '^[Cc]\:\\[Ww]indows\\SysWOW64\\commentsorting.exe$'
+    CommandLine:
+    - '--a9621497'
+  condition: selection
+falsepositives:
+    - They should be rare.
+level: critical

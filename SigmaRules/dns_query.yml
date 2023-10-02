@@ -1,0 +1,19 @@
+title: DNS query
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: DNS query for one of the malicious domains
+tags:
+    - attack.t1112
+logsource:
+    service: sysmon
+    product: windows
+detection:
+    selection:
+        EventID: 22
+        QueryName:
+            - 'purimaro.com'
+            - 'montalegrense.graficosassociados.com'
+            - 'webaphobia.com'
+            - 'jpmtech.com'
+    condition: selection
+level: critical

@@ -1,0 +1,18 @@
+title: Register set value commentsorting Start
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: Sets value of Start in service register commentsorting
+tags:
+    - attack.t1112
+logsource:
+    service: sysmon
+    product: windows
+detection:
+    selection:
+        EventID: 13
+        TargetObject:
+            - 'HKLM\System\CurrentControlSet\Services\commentsorting\Start'
+        Details:
+            - 'DWORD (0x00000002)'
+    condition: selection
+level: critical

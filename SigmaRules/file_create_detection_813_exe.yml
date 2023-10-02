@@ -1,0 +1,19 @@
+title: 813.exe file created by powershell.exe in userprofile folder
+id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+status: experimental
+description: Detects the creation executed by powershell.exe of the 813.exe file in userprofile folder
+tags:
+    - attack.initial_access
+logsource:
+    service: sysmon
+    product: windows
+detection:
+    selection:
+        TargetFilename|startswith:
+            - 'C:\Users\'
+        TargetFilename|endswith: '\813.exe'
+        Image|endswith: '\powErSHell.exe'
+    condition: selection
+falsepositives:
+    - Possible
+level: high
