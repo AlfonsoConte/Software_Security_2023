@@ -11,5 +11,6 @@ Il repository corrente contiene:
 - Le regole yara elaborate
 - Le regole SNORT (local.rules)
 - Le regole SIGMA
-- Il file "ww.ida" che tiene traccia dell'analisi statica avanzata realizzata col tool IDA Freeware contente le variabili e le funzioni rinominate opportunamente. 
+- Il file "ww.ida" che tiene traccia dell'analisi statica avanzata realizzata col tool IDA Freeware contente le variabili e le funzioni rinominate opportunamente.
+- La presentazione della malware analysis realizzata (EMOTET MALWARE ANALYSIS.pdf)
 
